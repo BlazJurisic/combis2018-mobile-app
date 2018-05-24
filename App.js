@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { LinearGradient } from 'expo'
 import { Font } from 'expo'
 //Dependencies
-import Auth from './src/UI/Auth'
+import Router from './src/Router'
 
 export default class App extends React.Component {
   async componentDidMount() {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    return this.state && this.state.fontLoaded && <Auth/>
+    return this.state && this.state.fontLoaded && <Router/>
   }
 }
 

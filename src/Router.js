@@ -1,20 +1,25 @@
 import React from 'React'
 import { observer } from 'mobx-react'
 //Local dependencies
-import locator from '../state/Store'
+import locator from './state/Store'
 import Auth from './UI/Auth'
-import Auth from './UI/Home'
+import Home from './UI/Home'
+import NotificationsProvider from './UI/NotificationsProvider'
 
 
 @observer
-class Router extends React.Component {
+export default class Router extends React.Component {
 
     render() {
-        return(
-            locator.authStore.isLoggedIn 
-            ? <Home/>
-            : <Auth/>
+        return (
+            <React.Fragment>
+                {
+                    locator.authStore.isLoggedIn
+                        ? <Home />
+                        : <Auth />
+                }
+                {/* <NotificationsProvider /> */}
+            </React.Fragment>
         )
     }
-
 }

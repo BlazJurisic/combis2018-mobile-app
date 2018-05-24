@@ -42,18 +42,12 @@ export default class Auth extends React.Component<any, State> {
   }
 
   onSubmit = () => {
-    // const { email, password } = this.state
-    // if (!email || !password) return
-    // const config = login({
-    //     email,
-    //     password
-    // })
-
+    const { email, password } = this.state
+    if (!email || !password) return
     const config = login({
-      email: "jurisic.blaz@gmail.com",
-      password: "jasamblaz"
+        email,
+        password
     })
-
     makeRequest(config)
       .then(
         response => {
@@ -62,10 +56,10 @@ export default class Auth extends React.Component<any, State> {
         }
       )
       .catch(
-        err => { console.log(err)
+        err => { console.log(err.message)
           locator.notificationStore.setNotification("Oops, something went wrong")
         })
-  }
+  } 
 
   register = (data: { username: string, email: string, password: string }) => {
     const mockUser = {
@@ -142,8 +136,8 @@ const colors = {
     white: 'rgb(255, 255, 255)'
   },
   backgroundColors: [
-    'rgb(253,154,107)',
-    'rgb(231,116,101)'
+    '#FF846B',
+    '#F76671'
   ],
   searchButton: {
     borderColor: 'rgba(0,0,0,0.2)',

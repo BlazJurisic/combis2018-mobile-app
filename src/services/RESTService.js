@@ -2,7 +2,7 @@ import Config from './Config'
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: Config.baseURL,
+    baseURL: 'http://li1495-155.members.linode.com/',
     timeout: 100000,
     headers: {
         //'authorization-static': Config.AuthorizationStatic,

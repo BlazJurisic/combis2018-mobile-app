@@ -14,13 +14,9 @@ export const register = (data: { username: string, email: string, password: stri
     }
 }
 
-// export const login = (data: any) => { 
-//     return {
-//         method: 'post',
-//         url: '/neki/levi/url',
-//         headers: {
-//             'Authorization': persistenceService.getToken()
-//         },
-//         data
-//     }
-// }
+export const getDonators = () => { 
+    return {
+        method: 'get',
+        url: '/donators/all'
+    }
+}
